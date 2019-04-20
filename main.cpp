@@ -17,7 +17,7 @@ int gen(int64_t seed,versions version, long x, long z, long sizeX, long sizeZ){
 }
 
 int main() {
-    std::cout << gen(1,MC_1_12,1,1) << std::endl;
+    std::cout << gen(1,MC_1_12,1,1,10,10) << std::endl;
     return 0;
 }
 
