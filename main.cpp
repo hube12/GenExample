@@ -7,8 +7,8 @@ int gen(int64_t seed,versions version, long x, long z, int sizeX, int sizeZ){
     applySeed(&g, (int64_t) seed);
     int *map = allocCache(&g.layers[g.layerNum - 1], sizeX, sizeZ);
     genArea(&g.layers[g.layerNum - 1], map, x, z, sizeX, sizeZ);
-    for (long long i=0;i<sizeX;i++){
-        for (long long j=0;j<sizeZ;j++){
+    for (int i=0;i<sizeX;i++){
+        for (int j=0;j<sizeZ;j++){
             std::cout << map[i*sizeZ+j] << " ";
         }
         std::cout<<std::endl;
