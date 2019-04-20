@@ -1,14 +1,19 @@
 #include <iostream>
 #include "generationByCubitect/generator.hpp"
 
-int gen(int64_t seed,versions version, long x, long z){
+int gen(int64_t seed,versions version, long x, long z, long sizeX, long sizeZ){
     initBiomes();
     LayerStack g = setupGenerator(version);
     applySeed(&g, (int64_t) seed);
-    int *map = allocCache(&g.layers[g.layerNum - 1], 1, 1);
-    genArea(&g.layers[g.layerNum - 1], map, x, z, 1, 1);
-    int biomeID = map[0];
-    return biomeID;
+    int *map = allocCache(&g.layers[g.layerNum - 1], sizeX, sizeZ);
+    genArea(&g.layers[g.layerNum - 1], map, x, z, sizeX, sizeZ);
+    for (long long i=0;i<sizeX*sizeZ;i++){
+        std::cout << map[i] << " ";
+    }
+    std::cout<<std::endl;
+    free(map);
+    freeGenerator(g);
+    return 0;
 }
 
 int main() {
