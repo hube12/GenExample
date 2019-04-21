@@ -18,8 +18,8 @@ void gen(int process) {
     initBiomes();
     LayerStack g = setupGenerator(MC_1_12);
     std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
-    for (int64_t seed = (400000000000 + 3620000 + process * 400000000000);
-         seed < (800000000000 + 3620000 + process * 400000000000); seed++) {
+    for (int64_t seed = (2000000000000000000+ process * 2000000000000000000);
+         seed < (4000000000000000000 + process * 2000000000000000000); seed++) {
         int64_t seed2 = seed;
         if (seed % 10000 == 0 && !process) {
             std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
