@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /mnt/d/r/code/FUN/GenExample
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named GenSpeed2
+
+# Build rule for target.
+GenSpeed2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 GenSpeed2
+.PHONY : GenSpeed2
+
+# fast build rule for target.
+GenSpeed2/fast:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/build
+.PHONY : GenSpeed2/fast
+
+#=============================================================================
 # Target rules for targets named GenSpeed
 
 # Build rule for target.
@@ -129,6 +142,7 @@ generationByCubitect/finders.o: generationByCubitect/finders.c.o
 
 # target to build an object file
 generationByCubitect/finders.c.o:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/finders.c.o
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/finders.c.o
 .PHONY : generationByCubitect/finders.c.o
 
@@ -138,6 +152,7 @@ generationByCubitect/finders.i: generationByCubitect/finders.c.i
 
 # target to preprocess a source file
 generationByCubitect/finders.c.i:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/finders.c.i
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/finders.c.i
 .PHONY : generationByCubitect/finders.c.i
 
@@ -147,6 +162,7 @@ generationByCubitect/finders.s: generationByCubitect/finders.c.s
 
 # target to generate assembly for a file
 generationByCubitect/finders.c.s:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/finders.c.s
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/finders.c.s
 .PHONY : generationByCubitect/finders.c.s
 
@@ -156,6 +172,7 @@ generationByCubitect/generator.o: generationByCubitect/generator.c.o
 
 # target to build an object file
 generationByCubitect/generator.c.o:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/generator.c.o
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/generator.c.o
 .PHONY : generationByCubitect/generator.c.o
 
@@ -165,6 +182,7 @@ generationByCubitect/generator.i: generationByCubitect/generator.c.i
 
 # target to preprocess a source file
 generationByCubitect/generator.c.i:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/generator.c.i
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/generator.c.i
 .PHONY : generationByCubitect/generator.c.i
 
@@ -174,6 +192,7 @@ generationByCubitect/generator.s: generationByCubitect/generator.c.s
 
 # target to generate assembly for a file
 generationByCubitect/generator.c.s:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/generator.c.s
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/generator.c.s
 .PHONY : generationByCubitect/generator.c.s
 
@@ -183,6 +202,7 @@ generationByCubitect/layers.o: generationByCubitect/layers.c.o
 
 # target to build an object file
 generationByCubitect/layers.c.o:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/layers.c.o
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/layers.c.o
 .PHONY : generationByCubitect/layers.c.o
 
@@ -192,6 +212,7 @@ generationByCubitect/layers.i: generationByCubitect/layers.c.i
 
 # target to preprocess a source file
 generationByCubitect/layers.c.i:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/layers.c.i
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/layers.c.i
 .PHONY : generationByCubitect/layers.c.i
 
@@ -201,6 +222,7 @@ generationByCubitect/layers.s: generationByCubitect/layers.c.s
 
 # target to generate assembly for a file
 generationByCubitect/layers.c.s:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/generationByCubitect/layers.c.s
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/generationByCubitect/layers.c.s
 .PHONY : generationByCubitect/layers.c.s
 
@@ -231,14 +253,42 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/GenSpeed.dir/build.make CMakeFiles/GenSpeed.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+matt.o: matt.cpp.o
+
+.PHONY : matt.o
+
+# target to build an object file
+matt.cpp.o:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/matt.cpp.o
+.PHONY : matt.cpp.o
+
+matt.i: matt.cpp.i
+
+.PHONY : matt.i
+
+# target to preprocess a source file
+matt.cpp.i:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/matt.cpp.i
+.PHONY : matt.cpp.i
+
+matt.s: matt.cpp.s
+
+.PHONY : matt.s
+
+# target to generate assembly for a file
+matt.cpp.s:
+	$(MAKE) -f CMakeFiles/GenSpeed2.dir/build.make CMakeFiles/GenSpeed2.dir/matt.cpp.s
+.PHONY : matt.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... GenSpeed2"
 	@echo "... GenSpeed"
 	@echo "... generationByCubitect/finders.o"
 	@echo "... generationByCubitect/finders.i"
@@ -252,6 +302,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... matt.o"
+	@echo "... matt.i"
+	@echo "... matt.s"
 .PHONY : help
 
 

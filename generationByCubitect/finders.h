@@ -127,7 +127,7 @@ static const StructureConfig TREASURE_CONFIG       = { 10387320,  1,  0, Treasur
 //==============================================================================
 // Biome Tables
 //==============================================================================
-
+const char* getValidStrongholdBiomes();
 static const int achievementBiomes_1_7[] =
 {
         ocean, plains, desert, extremeHills, forest, taiga, swampland, river, /*hell, sky,*/ // 0-9
